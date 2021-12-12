@@ -1,0 +1,148 @@
+@import '../../styles/variables';
+
+.gpt3__navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 2rem 6rem;
+}
+
+.gpt3__navbar-links{
+    flex:1;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    &._logo{
+        margin-right:2rem;
+    }
+    &_container{
+        display:flex;
+        flex-direction:row;
+        Link,p,a{
+            color: #FFF;
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 25px;
+            text-transform: capitalize;
+        
+            margin:0 1rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.gpt3__navbar-sign{
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    p,a{
+        color: #FFF;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        text-transform: capitalize;
+
+        margin:0 1rem;
+        cursor: pointer;
+    }
+    button{
+        padding: 0.5rem 1rem;
+        color: #FFF;
+        font-family: $font-family;
+        font-weight:500;
+        font-style: normal;
+        line-height: 25px;
+        border:0;
+        outline:none;
+        background:#FF4820;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+.gpt3__navbar-menu{
+    margin-left:2rem;
+    display:none;
+    position:relative;
+    svg{
+        cursor:pointer;
+    }
+    .gpt3__navbar-menu_container{
+        display:flex;
+        justify-content:flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+        text-align: end;
+        background: $color-footer;
+        padding:2rem;
+        position:absolute;
+        top:40px;
+        right:0;
+        margin-top:1rem;
+        min-width: 210px;
+        border-radius:5px;
+        box-shadow: 0 0 5 rgba(0,0,0,0.2);
+        
+        Link,a,p{
+            margin:1rem 0;
+            color: #FFF;
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 25px;
+            text-transform: capitalize;
+        
+            cursor: pointer;
+        }
+        button{
+            padding: 0.5rem 1rem;
+            color: #FFF;
+            font-family: $font-family;
+            font-weight:500;
+            font-style: normal;
+            line-height: 25px;
+            border:0;
+            outline:none;
+            background:#FF4820;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .gpt3__navbar-menu_container-links-sign{
+            display:none;
+        }
+    }
+}
+
+@import '../../styles/config';
+
+
+@include mediaLg{
+    .gpt3__navbar-links_container{
+        display:none;
+    }
+    .gpt3__navbar-menu{
+        display:flex;
+    }
+}
+@include mediaMd{
+    .gpt3__navbar{
+        padding :2rem 4rem;
+    }
+}
+@include mediaSm{
+    .gpt3__navbar{
+        padding :2rem;
+    }
+    .gpt3__navbar-sign{
+        display:none;
+    }
+    .gpt3__navbar-menu{
+        .gpt3__navbar-menu_container{
+            top:20px;
+            .gpt3__navbar-menu_container-links-sign{
+                display:block;
+            }
+        }
+    }
+}
